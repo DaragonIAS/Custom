@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="atr_view_form" model="ir.ui.view">
+        <field name="name">atr.view.form</field>
+        <field name="model">atracciones</field>
+        <field name="arch" type="xml">
+            <form string="Atracciones">
+                <sheet>
+                    <group>
+                        <field name="name"></field>
+                        <field name="disponibilidad"></field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="atr_view_form_tree" model="ir.ui.view">
+        <field name="name">atr.view.tree</field>
+        <field name="model">atracciones</field>
+        <field name="arch" type="xml">
+            <tree string="Atracciones">
+                <field name="name"></field>
+                <field name="disponibilidad"></field>
+            </tree>
+        </field>
+    </record>
+
+    <record id="atr_view_form_action" model="ir.actions.act_window">
+        <field name="name">atracciones</field>
+        <field name="res_model">atracciones</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Crea una atraccion
+            </p>
+        </field>
+    </record>
+
+<menuitem
+    id="atr_view_form_menu"
+    name="atracciones"
+    action="atr_view_form_action"
+    parent="event.event_main_menu"
+    sequence="10"/>
+    
+
+</odoo>
